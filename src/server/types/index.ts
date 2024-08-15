@@ -24,6 +24,15 @@ export interface Payload {
     email: User["email"];
 }
 
+// Use the below if you're using passport
+declare global {
+    namespace Express {
+        export interface User extends Payload {}
+    }
+}
+
+// Use the below if you're doing auth from scratch
+/*
 declare global {
     namespace Express {
         export interface Request {
@@ -31,3 +40,4 @@ declare global {
         }
     }
 }
+*/
